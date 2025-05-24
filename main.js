@@ -1,7 +1,9 @@
 const { app, BrowserWindow, ipcMain } = require('electron/main')
 const path = require('node:path')
+const { updateElectronApp } = require('update-electron-app')
 require('dotenv').config()
-require('update-electron-app')({
+
+updateElectronApp({
     repo: 'Genrei123/learnings',
     updateInterval: `5 minutes`,
     logger: console
