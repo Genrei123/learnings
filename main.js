@@ -1,7 +1,7 @@
 const { app, BrowserWindow, ipcMain } = require('electron/main')
 const path = require('node:path')
 require('dotenv').config()
-require('update-electron-app')()
+require('update-electron-app')
 
 
 const createWindow = () => {
