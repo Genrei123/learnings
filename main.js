@@ -1,5 +1,7 @@
 const { app, BrowserWindow, ipcMain } = require('electron/main')
 const path = require('node:path')
+require('dotenv').config()
+require('update-electron-app')()
 
 
 const createWindow = () => {
@@ -10,6 +12,8 @@ const createWindow = () => {
             preload: path.join(__dirname, 'preload.js')
         }
     })
+
+    console.log(process.env.GITHUB_TOKEN)
 
     win.loadFile('index.html')
 }

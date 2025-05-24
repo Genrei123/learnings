@@ -1,7 +1,25 @@
 const { FusesPlugin } = require('@electron-forge/plugin-fuses');
 const { FuseV1Options, FuseVersion } = require('@electron/fuses');
+require('dotenv').config()
 
 module.exports = {
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'Genrei123',
+          name: 'learnings'
+        },
+        prerelease: false,
+        draft: true,
+        authToken: process.env.GITHUB_TOKEN
+        
+      },
+      
+    }
+
+  ],
   packagerConfig: {
     asar: true,
   },
