@@ -1,0 +1,6 @@
+
+my-electron-app/node_modules/*
+out
+my-app
+.env
+node_modules/
